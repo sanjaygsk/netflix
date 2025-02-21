@@ -8,6 +8,8 @@ import {enableScreens} from 'react-native-screens';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
 import Intro from './src/pages/Intro';
 import Signin from './src/pages/Signin';
+import Home from './src/pages/Home';
+import Profiles from './src/pages/Profiles';
 
 enableScreens();
 
@@ -18,7 +20,7 @@ const App = () => {
     useState(false);
 
   useEffect(() => {
-    console.error('useEffect', isSplashAnimationFinished);
+    // console.error('useEffect', isSplashAnimationFinished);
   }, [isSplashAnimationFinished]);
 
   return (
@@ -39,6 +41,14 @@ const App = () => {
             <Stack.Screen
               name="Signin"
               component={Signin}
+            />
+            <Stack.Screen
+              name="Profiles"
+              component={Profiles}
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
             />
           </Stack.Navigator>
         </NavigationContainer>

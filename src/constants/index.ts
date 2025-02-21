@@ -12,6 +12,8 @@ export const GREY = '#8E8E8E';
 export const RED_RGB = 'rgba(229, 9, 20)';
 export const DARK_RED_RGB = 'rgba(178, 7, 16)';
 export const SPLASH_BACKGROUND_COLOR = '#231F1F';
+export const WHITE = '#FFFFFF';
+export const BLACK = '#000000';
 
 // Fonts
 export const FontConstant = {

@@ -1,6 +1,6 @@
 import {Image, Linking, Text, TouchableOpacity, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {FontConstant, PRIVACY_POLICY_URL, RED} from '../../constants';
+import {FontConstant, PRIVACY_POLICY_URL, RED, WHITE} from '../../constants';
 import {useNavigation} from '@react-navigation/native';
 
 const Intro = () => {
@@ -65,26 +65,57 @@ const Intro = () => {
           height: '100%',
           width: '100%',
         }}>
-        {/* <View style={{bottom: 0, maxWidth: "100%"}}> */}
-        <Text
-          style={{
-            color: '#fff',
-            fontSize: 65,
-            ...FontConstant.bold,
-            position: 'absolute',
-            zIndex: 2,
-            textAlign: 'center',
-            paddingHorizontal: 16,
-            letterSpacing: -4,
-            bottom: '20%',
-          }}>
-          Unlimited entertainment, one low price
-        </Text>
-        {/* </View> */}
         <Image
           source={require('../../../assets/images/background.png')}
           style={{width: '100%', height: '100%', opacity: 0.5}}
         />
+        <View
+          style={{
+            bottom: insets.bottom + 20,
+            maxWidth: '100%',
+            position: 'absolute',
+          }}>
+          <Text
+            style={{
+              color: '#FFFFFF',
+              fontSize: 50,
+              textAlign: 'center',
+              paddingHorizontal: 16,
+              letterSpacing: -2,
+              ...FontConstant.bold,
+            }}>
+            Unlimited entertainment, one low price
+          </Text>
+          <Text
+            style={{
+              color: '#FFFFFF',
+              fontSize: 20,
+              textAlign: 'center',
+              paddingHorizontal: 16,
+              marginTop: 20,
+              marginBottom: 40,
+              ...FontConstant.medium,
+            }}>
+            All of Netflix starting at just ₹149
+          </Text>
+          <TouchableOpacity
+            style={{
+              backgroundColor: RED,
+              height: 60,
+              marginHorizontal: 16,
+              marginBottom: 20,
+              borderRadius: 4,
+              marginTop: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            onPress={() => navigation.navigate('Signin')}
+            activeOpacity={0.9}>
+            <Text style={{color: WHITE, ...FontConstant.medium, fontSize: 20}}>
+              Get Started
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
